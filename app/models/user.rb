@@ -14,6 +14,8 @@ class User < ApplicationRecord
   end
 
   def name=(full_name)
+    return if full_name.nil?
+
     names = full_name.split(' ')
     self.first_name = names[0]
     self.last_name = names[-1].join(' ') if names.size > 1
