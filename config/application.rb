@@ -31,5 +31,8 @@ module Mailbox
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Generate Schema in sql format
+    config.active_record.schema_format = :sql
   end
 end
