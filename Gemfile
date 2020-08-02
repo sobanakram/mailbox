@@ -26,6 +26,11 @@ gem 'devise', '~> 4.7.1'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
+gem 'trestle'
+gem 'trestle-active_storage'
+gem 'trestle-auth'
+gem 'trestle-tinymce'
+
 # Use postgres as the database for production
 gem 'pg'
 
