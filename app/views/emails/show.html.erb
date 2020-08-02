@@ -1,0 +1,24 @@
+<% email ||= @email %>
+<div data-controller="email">
+  <div>
+    <div>From: <strong><%= "#{email.user_name || 'No Name' }<#{email.user_email}>" %></strong></div>
+    <div>To: <strong><%= "#{email.user.name || 'No Name' }<#{email.user.email}>" %></strong></div>
+  </div>
+  <div class="header">
+    <span class="subject">Subject: <strong><%= email.subject %></strong></span>
+    <%= image_pack_tag 'media/icons/delete.svg', alt: "Delete", class: 'delete-icon' %>
+  </div>
+  <div class="content">
+    <iframe src="<%= content_email_path(email) %>"></iframe>
+    <ul class="attachments">
+      <% email.attachments.each do |attachment| %>
+        <li class="link">
+          <a href="<%= attachment_url(attachment) %>" target="_blank" rel="noopener noreferrer">
+            <% preview_url = attachment_preview_url(attachment) %>
+            <%= preview_url ? image_tag(preview_url) : attachment.filename %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

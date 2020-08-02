@@ -1,3 +1,112 @@
-// Place all the styles related to the Emails controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.inbox-container {
+  display: flex;
+}
+
+.fixed-panel {
+  position: fixed;
+  height: calc(100vh - 72px);
+  max-height: calc(100vh - 72px);
+}
+
+.fixed-panel.left {
+  width: 350px;
+  left: 0;
+  border-right: solid 1px black;
+}
+
+.fixed-panel.left .pre-scrollable {
+  max-height: calc(100vh - 126px);
+  padding-bottom: 1rem;
+  overflow-y: scroll;
+
+}
+
+.fixed-panel.right {
+  max-width: calc(100% - 350px);
+  width: calc(100% - 350px);
+  left: 350px;
+  overflow-y: scroll;
+}
+
+.emails-list {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    cursor: pointer;
+    padding: 5px 5px 5px 30px;
+    border-bottom: solid 1px gray;
+    position: relative;
+  }
+
+  li.selected {
+    background: lightseagreen;
+  }
+
+  .title {
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .timestamp {
+    position: absolute;
+    right: 10px;
+  }
+
+  .subject {
+    font-size: 0.75rem;
+    max-height: 36px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.empty-container {
+  padding: 30px;
+  font-size: 25px;
+}
+
+.container.email {
+  padding: 1rem;
+
+  .header {
+    width: 100%;
+
+    .subject {
+      font-size: 24px;
+
+    }
+
+    .delete-icon {
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    border: 1px solid white;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    color: #262a2d;
+
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .attachments .link {
+      padding: 5px;
+      display: inline;
+    }
+  }
+}

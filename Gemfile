@@ -21,8 +21,8 @@ gem 'turbolinks', '~> 5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'devise', '~> 4.7.1'
 gem 'aws-sdk-s3', require: false
+gem 'devise', '~> 4.7.1'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
@@ -41,10 +41,10 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

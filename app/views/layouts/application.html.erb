@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mailbox</title>
+    <title>MSA Mailbox</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><a href="/" class="navbar-brand">MSA Mailbox</a>
+      <button aria-controls="responsive-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+        <span class="navbar-toggler-icon"></span></button>
+      <div class="navbar-collapse collapse" id="responsive-navbar-nav">
+        <div class="mr-auto navbar-nav">
+          <a href="/" data-rb-event-key="/" class="nav-link active">Inbox</a>
+          <a href="/sent" data-rb-event-key="/sent" class="nav-link">Sent</a>
+          <a href="/drafts" data-rb-event-key="/drafts" class="nav-link">Draft</a>
+          <a href="/about" data-rb-event-key="/about" class="nav-link">About</a>
+        </div>
+        <span class="navbar-text"><a href="/login" class="nav-link">Logout</a></span></div>
+    </nav>
     <%= yield %>
   </body>
 </html>
