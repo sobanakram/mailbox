@@ -1,0 +1,20 @@
+<div class="devise-container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin text-center' }) do |f| %>
+        <img class="mb-4" src="https://v5.getbootstrap.com/docs/5.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: 'form-control', placeholder: "Email address" %>
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true, class: 'form-control' %>
+    <div class="checkbox mb-3">
+      <label>
+        <%= f.check_box :remember_me, value: 'remember-me' %>
+        Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <%#= render "devise/shared/links" %>
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+  <% end %>
+</div>

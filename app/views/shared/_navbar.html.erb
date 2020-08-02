@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><a href="/" class="navbar-brand">MSA Mailbox</a>
+    <button aria-controls="responsive-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+      <span class="navbar-toggler-icon"></span></button>
+    <div class="navbar-collapse collapse" id="responsive-navbar-nav">
+      <div class="mr-auto navbar-nav">
+        <a href="/" data-rb-event-key="/" class="nav-link active">Inbox</a>
+        <a href="/sent" data-rb-event-key="/sent" class="nav-link">Sent</a>
+        <a href="/drafts" data-rb-event-key="/drafts" class="nav-link">Draft</a>
+        <a href="/about" data-rb-event-key="/about" class="nav-link">About</a>
+      </div>
+      <span class="navbar-text">
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </span>
+    </div>
+  </nav>
+<% end %>
