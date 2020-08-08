@@ -10,17 +10,17 @@ class User < ApplicationRecord
 
   enum _type: { admin: 0, user: 1 }
 
-  def name
-    "#{first_name} #{last_name}"
-  end
-
-  def name=(full_name)
-    return if full_name.nil?
-
-    names = full_name.split(' ')
-    self.first_name = names[0..-2].join(' ')
-    self.last_name = names[-1] if names.size > 1
-  end
+  # def name
+  #   "#{first_name} #{last_name}"
+  # end
+  #
+  # def name=(full_name)
+  #   return if full_name.nil?
+  #
+  #   names = full_name.split(' ')
+  #   self.first_name = names[0..-2].join(' ')
+  #   self.last_name = names[-1] if names.size > 1
+  # end
 
   # Region Self Methods
   def self.find_or_create_dummy(email, name)
