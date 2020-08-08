@@ -7,6 +7,7 @@ class CreateEmails < ActiveRecord::Migration[6.0]
       t.text :content
       t.datetime :discarded_at, index: true
       t.references :user, null: false, foreign_key: true
+
       t.timestamps
     end
   end
