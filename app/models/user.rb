@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   enum _type: { admin: 0, user: 1 }
 
+  before_validation :init_uid
+
   # def name
   #   "#{first_name} #{last_name}"
   # end
@@ -25,5 +27,11 @@ class User < ApplicationRecord
   # Region Self Methods
   def self.find_or_create_dummy(email, name)
     find_by_email(email) || create(email: email, name: name, password: Devise.friendly_token[0, 20])
+  end
+
+  private
+
+  def init_uid
+    self.uid = email if uid.blank? && provider == 'email'
   end
 end

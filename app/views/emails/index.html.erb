@@ -8,11 +8,10 @@
         <ul>
           <% @emails.each do |email| %>
             <li class="" title="<%= "#{email.user_name || 'No Name' }<#{email.user_email}>" %>" data-controller="email-item"
-                data-email-item-datetime="<%= email.created_at %>" data-email-item-url="<%= email_path email %>"
+                data-email-item-datetime="<%= email.created_at.strftime('%H:%M %b, %d %Y') %>" data-email-item-url="<%= email_path email %>"
                 data-action="click->email-item#fetchEmail">
               <div class="title"><span class="user"><strong><%= "#{email.user_name || 'No Name' }" %></strong></span>
                 <time data-target="email-item.dateTime" class="timestamp" title="<%= email.created_at.strftime('%H:%M %b, %d %Y') %>"></time>
-                <!--                <time class="timestamp"> <%#= email.created_at.strftime('%b %d %Y') %></time>-->
               </div>
               <div class="subject"><%= email.subject %></div>
             </li>
@@ -23,27 +22,6 @@
   </div>
   <div class="fixed-panel right pre-scrollable">
     <div class="container email" id="emailContainer">
-      <!--      <div>-->
-      <!--        <div>From: <strong>Mr. Thomas Howard&lt;tt.howard34@mksat.net&gt;</strong></div>-->
-      <!--        <div>To: <strong>null&lt;info@soban.me&gt;</strong></div>-->
-      <!--      </div>-->
-      <!--      <div class="header">-->
-      <!--        <span class="subject">Subject: <strong>Hello</strong></span><img class="delete-icon" src="/static/media/delete-icon.3068c2b8.svg" alt="Delete">-->
-      <!--      </div>-->
-      <!--      <div class="content">-->
-      <!--        <div><pre>Hello-->
-
-      <!--I am glad I found you.-->
-
-      <!--I have a project that I would like to execute with you. This is going to favour two of us. Kindly confirm your willingness to partner with me so that I can furnish you with full details of the project.-->
-
-      <!--I am waiting for your reply.-->
-
-      <!--Warm regards-->
-      <!--Mr. Thomas Howard</pre>-->
-      <!--        </div>-->
-      <!--        <ul class="attachments"></ul>-->
-      <!--      </div>-->
     </div>
   </div>
 </div>
