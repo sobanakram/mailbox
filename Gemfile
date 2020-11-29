@@ -28,6 +28,8 @@ gem 'image_processing', '~> 1.2'
 
 gem 'mailgun-ruby', '~>1.1.6'
 
+gem 'simple_form', '~> 5.0'
+
 gem 'trestle'
 gem 'trestle-active_storage'
 gem 'trestle-auth'

@@ -1,0 +1,15 @@
+<div class="container-fluid pt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <%= simple_form_for @email, data: { controller: 'new-email' } do |form| %>
+        <%= form.input :user_email %>
+        <%= form.input :subject %>
+        <%= form.input :content, input_html: { class: 'tinymce', 'data-target': 'new-email.content' } %>
+
+        <div class="pt-3 text-right">
+          <%= form.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

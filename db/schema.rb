@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_093508) do
+ActiveRecord::Schema.define(version: 2020_08_16_061731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_093508) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "_type", default: 0
     t.index ["discarded_at"], name: "index_emails_on_discarded_at"
     t.index ["user_id"], name: "index_emails_on_user_id"
   end

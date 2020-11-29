@@ -6,6 +6,10 @@ class EmailsController < ApplicationController
     @emails = Email.with_attached_attachments.includes(:user).order(id: :desc)
   end
 
+  def new
+    @email = current_user.emails.new
+  end
+
   def show
     render 'show', layout: false
   end
