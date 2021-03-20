@@ -1,0 +1,9 @@
+name: Analyze code statically
+"on": pull_request
+jobs:
+  rails_best_practices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Analyze code statically using Rails Best Practices
+        uses: moneyforward/rails_best_practices-action@v0
