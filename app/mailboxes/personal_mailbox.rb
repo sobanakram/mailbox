@@ -1,6 +1,11 @@
 class PersonalMailbox < ApplicationMailbox
 
   def process
+    if mail.from_address.address.include?("starcom-pvl.ru")
+      inbound_email.bounced!
+      return
+    end
+
     part_to_use = (mail.html_part || mail.text_part || mail)
     encoding = part_to_use.content_type_parameters['charset']
     body = part_to_use.body.decoded.force_encoding(encoding).encode('UTF-8')
