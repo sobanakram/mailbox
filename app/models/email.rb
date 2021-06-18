@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: emails
+#
+#  id           :bigint           not null, primary key
+#  user_name    :string
+#  user_email   :string
+#  subject      :string
+#  content      :text
+#  discarded_at :datetime
+#  user_id      :bigint           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class Email < ApplicationRecord
   include Discard::Model
 

@@ -47,6 +47,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'better_errors', "~> 2.9"
   gem 'binding_of_caller', "~> 1.0"
