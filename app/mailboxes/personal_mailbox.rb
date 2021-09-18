@@ -1,7 +1,7 @@
 class PersonalMailbox < ApplicationMailbox
 
   def process
-    if mail.from_address.address.include?("starcom-pvl.ru")
+    if mail.from_address.address.include?(".ru") || mail.from_address.name.downcase.include?("alek")
       inbound_email.bounced!
       return
     end
