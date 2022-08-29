@@ -1,0 +1,15 @@
+<div data-controller="email">
+  <div>
+    <div>From: <strong><%= "#{email.user_name || 'No Name' }<#{email.user_email}>" %></strong></div>
+    <div>To: <strong><%= "#{email.user.name || 'No Name' }<#{email.user.email}>" %></strong></div>
+  </div>
+  <div class="header">
+    <span class="subject">Subject: <strong><%= email.subject %></strong></span><img class="delete-icon" src="" alt="Delete">
+  </div>
+  <div class="content">
+      <pre>
+      <%= raw email.content %>
+    </pre>
+    <ul class="attachments"></ul>
+  </div>
+</div>
