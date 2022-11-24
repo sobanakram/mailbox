@@ -88,9 +88,9 @@ Rails.application.configure do
   config.action_mailbox.ingress = :sendgrid
 
 
-  config.hosts << 'msa-mailbox.herokuapp.com'
+  config.hosts << Rails.application.credentials.dig(:host)
   config.hosts << 'mail.soban.me'
-  Rails.application.routes.default_url_options[:host] = 'msa-mailbox.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = Rails.application.credentials.dig(:host)
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
