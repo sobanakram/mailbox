@@ -1,6 +1,6 @@
 databases:
   - name: mailbox
-    databaseName: msa-mailbox
+    databaseName: mailbox
     user: soban
 
 services:
