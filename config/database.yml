@@ -23,6 +23,4 @@ test:
 
 production:
   <<: *default
-  username:
-  password:
-  database: mailbox_production
+  url: <%= ENV['DATABASE_URL'] %>

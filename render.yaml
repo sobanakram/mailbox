@@ -1,0 +1,18 @@
+databases:
+  - name: mailbox
+    databaseName: msa-mailbox
+    user: soban
+
+services:
+  - type: web
+    name: mailbox
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mailbox
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
