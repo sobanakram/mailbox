@@ -5,7 +5,12 @@ export default class extends Controller {
   static targets = ["dateTime"]
 
   connect() {
-    this.dateTime = timeAgoFromString(this.dateTime)
+    this.updateDateTime()
+  }
+
+  updateDateTime() {
+    this.dateTimeTarget.textContent = timeAgoFromString(this.dateTime)
+    this.dateTimeTarget.title = new Date(this.dateTime).format("h:MM TT  dddd, mmmm dS, yyyy")
   }
 
   fetchEmail() {
@@ -19,6 +24,7 @@ export default class extends Controller {
         });
     }
     this.emailListController.selectEmailItemController(this)
+    this.element.classList.remove('unread')
   }
 
   get emailListController() {
@@ -45,9 +51,5 @@ export default class extends Controller {
     } else {
       this.element.classList.remove('active')
     }
-  }
-
-  set dateTime(text) {
-    this.dateTimeTarget.textContent = text
   }
 }

@@ -1,10 +1,14 @@
-import TimeAgo from 'javascript-time-ago'
-// Load locale-specific relative date/time formatting rules.
-import en from 'javascript-time-ago/locale/en'
-
-TimeAgo.addDefaultLocale(en)
-
+import "../plugins/date.format"
 export function timeAgoFromString(datetime, format = 'twitter') {
-  let timeAgo = new TimeAgo('en-US')
-  return timeAgo.format(datetime, format)
+  datetime = new Date(datetime);
+  let today = new Date();
+  if (today.getFullYear() > datetime.getFullYear()) {
+    return datetime.format('mm/dd/yy');
+  } else {
+    if (today.getDate() > datetime.getDate()) {
+      return datetime.format('mmm dd');
+    } else {
+      return datetime.format('h:MM TT');
+    }
+  }
 }

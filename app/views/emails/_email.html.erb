@@ -1,0 +1,8 @@
+<li class="email <%= 'unread' if email.unread? %>" title="<%= "#{email.user_name || 'No Name' }<#{email.user_email}>" %>" data-controller="email-item"
+    data-email-item-datetime="<%= email.created_at.iso8601 %>" data-email-item-url="<%= email_path email %>"
+    data-action="click->email-item#fetchEmail">
+  <div class="title"><span class="user"><strong><%= "#{email.user_name || 'No Name' }" %></strong></span>
+    <time data-email-item-target="dateTime" class="timestamp"></time>
+  </div>
+  <div class="subject"><%= email.subject %></div>
+</li>

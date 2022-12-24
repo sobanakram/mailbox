@@ -51,8 +51,8 @@ class User < ApplicationRecord
   # end
 
   # Region Self Methods
-  def self.find_or_create_dummy(email, name)
-    find_by_email(email) || create(email: email, name: name, password: Devise.friendly_token[0, 20])
+  def self.find_or_create_dummy(email)
+    find_by_email(email) || create(email: email, password: Devise.friendly_token[0, 20])
   end
 
   private

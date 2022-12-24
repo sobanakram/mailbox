@@ -20,6 +20,12 @@ class Email < ApplicationRecord
 
   validates_presence_of :subject, :content
 
+  after_create_commit { broadcast_prepend_to "emails", locals: { email: self } }
+
+  def unread?
+    !read?
+  end
+
   def url
     Rails.application.routes.url_helpers.rails_blob_url(object)
   end

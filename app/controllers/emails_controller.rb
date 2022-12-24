@@ -7,6 +7,7 @@ class EmailsController < ApplicationController
   end
 
   def show
+    @email.update(read: true)
     render 'show', layout: false
   end
 

@@ -5,17 +5,9 @@
     </div>
     <div class="pre-scrollable">
       <div class="emails-list" data-controller="email-list">
-        <ul>
-          <% @emails.each do |email| %>
-            <li class="" title="<%= "#{email.user_name || 'No Name' }<#{email.user_email}>" %>" data-controller="email-item"
-                data-email-item-datetime="<%= email.created_at.strftime('%H:%M %b, %d %Y') %>" data-email-item-url="<%= email_path email %>"
-                data-action="click->email-item#fetchEmail">
-              <div class="title"><span class="user"><strong><%= "#{email.user_name || 'No Name' }" %></strong></span>
-                <time data-email-item-target="dateTime" class="timestamp" title="<%= email.created_at.strftime('%H:%M %b, %d %Y') %>"></time>
-              </div>
-              <div class="subject"><%= email.subject %></div>
-            </li>
-          <% end %>
+        <%= turbo_stream_from "emails" %>
+        <ul id="emails">
+          <%= render @emails %>
         </ul>
       </div>
     </div>
