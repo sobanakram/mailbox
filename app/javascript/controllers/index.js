@@ -7,6 +7,9 @@ import { application } from "./application"
 import ApplicationController from "./application_controller"
 application.register("application", ApplicationController)
 
+import EmailComposeController from "./email_compose_controller"
+application.register("email-compose", EmailComposeController)
+
 import EmailController from "./email_controller"
 application.register("email", EmailController)
 
@@ -15,3 +18,6 @@ application.register("email-item", EmailItemController)
 
 import EmailListController from "./email_list_controller"
 application.register("email-list", EmailListController)
+
+import ToastController from "./toast_controller"
+application.register("toast", ToastController)

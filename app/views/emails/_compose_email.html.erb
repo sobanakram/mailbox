@@ -1,0 +1,24 @@
+<div data-controller="email-compose">
+  <div class="w-100 d-flex justify-content-end">
+    <button type="button" class="btn btn-primary" data-action="click->email-compose#open">
+      Compose <i class="bi bi-pencil-square"></i>
+    </button>
+  </div>
+  <div class="compose-email position-fixed bottom-0">
+    <div class="card text-white bg-dark d-none" data-email-compose-target="card">
+      <div class="card-header cur-pointer" data-action="click->email-compose#toggle">
+        New Email
+        <div class="float-end">
+          <i class="bi bi-dash-lg"></i>
+          <i class="bi bi-x-lg" data-action="click->email-compose#close"></i>
+        </div>
+      </div>
+      <div class="card-body" data-email-compose-target="cardBody">
+        <input class="form-control form-control-sm mb-2" type="email" placeholder="To" data-email-compose-target="emailInput">
+        <input class="form-control form-control-sm mb-2" type="text" placeholder="Subject" data-email-compose-target="subjectInput">
+        <textarea class="form-control mb-2" rows="5" placeholder="Body" data-email-compose-target="bodyInput"></textarea>
+        <a href="#" class="btn btn-primary">Send <i class="bi bi-send"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

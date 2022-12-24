@@ -9,13 +9,22 @@ export default class extends Controller {
   }
 
   fetchEmail() {
-    fetch(this.url)
-      .then(function (response) {
-        return response.text()
-      })
-      .then(function (text) {
-        document.getElementById('emailContainer').innerHTML = text
-      });
+    if (!this.isActive) {
+      fetch(this.url)
+        .then((response) => {
+          return response.text()
+        })
+        .then((text) => {
+          document.getElementById('emailContainer').innerHTML = text
+        });
+    }
+    this.emailListController.selectEmailItemController(this)
+  }
+
+  get emailListController() {
+    return this.application.controllers.find((controller) => {
+      return controller.identifier === 'email-list'
+    })
   }
 
   get dateTime() {
@@ -24,6 +33,18 @@ export default class extends Controller {
 
   get url() {
     return this.data.get('url')
+  }
+
+  get isActive() {
+    return this.element.classList.contains('active')
+  }
+
+  set active(active) {
+    if (active) {
+      this.element.classList.add('active')
+    } else {
+      this.element.classList.remove('active')
+    }
   }
 
   set dateTime(text) {

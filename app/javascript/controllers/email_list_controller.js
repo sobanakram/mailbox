@@ -1,12 +1,3 @@
-// Visit The Stimulus Handbook for more details 
-// https://stimulusjs.org/handbook/introduction
-// 
-// This example controller works with specially annotated HTML like:
-//
-// <div data-controller="hello">
-//   <h1 data-target="hello.output"></h1>
-// </div>
-
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
@@ -14,5 +5,18 @@ export default class extends Controller {
 
   connect() {
     // this.outputTarget.textContent = 'Hello, Stimulus!'
+  }
+
+  selectEmailItemController(selectedController) {
+    this.emailItemControllers.forEach((controller) => {
+      controller.active = controller === selectedController
+    })
+  }
+
+
+  get emailItemControllers() {
+    return this.application.controllers.filter((controller) => {
+      return controller.identifier === 'email-item'
+    })
   }
 }

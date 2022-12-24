@@ -98,8 +98,8 @@ Rails.application.configure do
     :password => Rails.application.credentials.dig(:sendgrid, :api_key), # This is the secret sendgrid API key which was issued during API key creation
     :domain => Rails.application.credentials.dig(:sendgrid, :domain),
     :address => 'smtp.sendgrid.net',
-    :port => 465,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    :port => 25,
+    # :authentication => :plain,
+    # :enable_starttls_auto => true
   }
 end
