@@ -10,7 +10,7 @@
           <%= render @emails %>
         </ul>
       </div>
-      <%= render "pager", pagy: @pagy %>
+      <%= render "pager", pagy: @pagy, last_id: @emails.last&.id %>
     </div>
   </div>
   <div class="fixed-panel right pre-scrollable">

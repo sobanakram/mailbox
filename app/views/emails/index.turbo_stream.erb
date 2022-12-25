@@ -6,5 +6,5 @@
 <%= turbo_stream_action_tag(
       "replace",
       target: "pager",
-      template: %(#{render "pager", pagy: @pagy})
+      template: %(#{render "pager", pagy: @pagy, last_id: @emails.last&.id})
     ) %>

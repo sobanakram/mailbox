@@ -46,7 +46,7 @@ gem 'discard', "~> 1.2"
 gem 'aws-sdk-s3', "~> 1.117", require: false
 gem 'devise', "~> 4.8"
 
-gem "pagy", "~> 6.0"
+gem "pagy_cursor", "~> 0.5.0"
 
 # gem 'trestle'
 # gem 'trestle-active_storage', github: "CooCOccO/trestle-active_storage"
