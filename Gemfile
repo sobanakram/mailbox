@@ -6,6 +6,8 @@ ruby "~> #{`cat .ruby-version`.strip}"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0", ">= 7.0.3.1"
 
+gem "mail", "~> 2.7.0"
+
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft", "~> 0.6"
 

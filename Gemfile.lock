@@ -146,11 +146,8 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
-      net-imap
-      net-pop
-      net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -284,6 +281,7 @@ DEPENDENCIES
   jbuilder (~> 2.11)
   jsbundling-rails (~> 1.0)
   listen (~> 3.7)
+  mail (~> 2.7.0)
   pg (~> 1.4)
   propshaft (~> 0.6)
   puma (~> 5.6)

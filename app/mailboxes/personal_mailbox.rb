@@ -1,7 +1,7 @@
 class PersonalMailbox < ApplicationMailbox
 
   def process
-    address = mail.from.first
+    address = mail.from_address.address
     if address.include?(".ru") || address.include?("alek")
       inbound_email.bounced!
       return
@@ -9,9 +9,7 @@ class PersonalMailbox < ApplicationMailbox
 
     part_to_use = (mail.html_part || mail.text_part || mail)
     encoding = part_to_use.content_type_parameters['charset']
-    body = part_to_use.body.decoded
-    body = body.force_encoding(encoding) if encoding
-    body = body.encode('UTF-8')
+    body = part_to_use.body.decoded.force_encoding(encoding).encode('UTF-8')
     save_email(body)
   end
 
@@ -25,17 +23,16 @@ class PersonalMailbox < ApplicationMailbox
   end
 
   def user
-    @user ||= User.find_or_create_dummy(mail.to.first)
+    @user ||= User.find_or_create_dummy(mail.to_addresses.first.address,
+                                        mail.to_addresses.first.name)
   end
 
   def email_params(body)
     { user: user, subject: mail.subject, content: body,
-      # user_name: mail.from_address.name,
-      user_email: mail.from.first
+      user_name: mail.from_address.name,
+      user_email: mail.from_address.address
     }
   end
-
-  Mail::FromField
 
   def create_temp_file(attachment)
     temp_file = Tempfile.new(attachment.filename)
