@@ -10,7 +10,8 @@
     "copyfiles": "^2.4.1",
     "esbuild": "^0.15.5",
     "javascript-time-ago": "^2.5.7",
-    "sass": "^1.54.5"
+    "sass": "^1.54.5",
+    "stimulus-use": "^0.51.1"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",

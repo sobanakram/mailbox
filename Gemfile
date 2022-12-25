@@ -6,6 +6,7 @@ ruby "~> #{`cat .ruby-version`.strip}"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0", ">= 7.0.3.1"
 
+# fix for Rails issue regarding from_address
 gem "mail", "~> 2.7.0"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -44,6 +45,8 @@ gem "redis", "~> 4.8"
 gem 'discard', "~> 1.2"
 gem 'aws-sdk-s3', "~> 1.117", require: false
 gem 'devise', "~> 4.8"
+
+gem "pagy", "~> 6.0"
 
 # gem 'trestle'
 # gem 'trestle-active_storage', github: "CooCOccO/trestle-active_storage"

@@ -7,6 +7,9 @@ import { application } from "./application"
 import ApplicationController from "./application_controller"
 application.register("application", ApplicationController)
 
+import AutoclickController from "./autoclick_controller"
+application.register("autoclick", AutoclickController)
+
 import EmailComposeController from "./email_compose_controller"
 application.register("email-compose", EmailComposeController)
 
