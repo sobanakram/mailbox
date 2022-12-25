@@ -4,8 +4,8 @@
 
 .fixed-panel {
   position: fixed;
-  height: calc(100vh - 72px);
-  max-height: calc(100vh - 72px);
+  height: calc(100vh - 56px);
+  max-height: calc(100vh - 56px);
 
   &.left {
     width: 350px;
@@ -14,8 +14,7 @@
     z-index: 2;
 
     .pre-scrollable {
-      max-height: calc(100vh - 126px);
-      padding-bottom: 1rem;
+      max-height: calc(100vh - 110px);
       overflow-y: scroll;
 
     }
