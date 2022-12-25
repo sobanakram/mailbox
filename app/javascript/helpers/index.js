@@ -1,14 +1,15 @@
 import "../plugins/date.format"
-export function timeAgoFromString(datetime, format = 'twitter') {
-  datetime = new Date(datetime);
-  let today = new Date();
+
+export function timeAgoFromString(datetime) {
+  datetime = new Date(datetime)
+  let today = new Date()
   if (today.getFullYear() > datetime.getFullYear()) {
-    return datetime.format('mm/dd/yy');
+    return datetime.format('mm/dd/yy')
   } else {
-    if (today.getDate() > datetime.getDate()) {
-      return datetime.format('mmm dd');
+    if (today.toDateString() === datetime.toDateString()) {
+      return datetime.format('h:MM TT')
     } else {
-      return datetime.format('h:MM TT');
+      return datetime.format('mmm dd')
     }
   }
 }

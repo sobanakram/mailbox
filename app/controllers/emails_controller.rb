@@ -3,7 +3,7 @@ class EmailsController < ApplicationController
   before_action :set_email, only: %i[show content]
 
   def index
-    @pagy, @emails = pagy(Email.includes(:user).order(id: :desc), items: 10)
+    @pagy, @emails = pagy(Email.includes(:user).order(id: :desc))
   end
 
   def show
